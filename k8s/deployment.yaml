@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: cloud_cd
-  name: cloud_cd-deployment
+    app: cloud
+  name: cloud-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: cloud_cd
+      app: cloud
   template:
     metadata:
       labels:
-        app: cloud_cd
+        app: cloud
         track: stable
     spec:
       containers:
-        - image: niukor-docker.pkg.coding.net/2_devops_cicd/release/cloud_cd
-          name: cloud_cd
+        - image: niukor-docker.pkg.coding.net/2_devops_cicd/release/cloud
+          name: cloud
           ports:
             - containerPort: 80
       imagePullSecrets:
