@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-  name: tke-service
+  name: cloud_cd-service
 spec:
   ports:
     - name: http
       port: 5000
       protocol: TCP
   selector:
-    app: tke
+    app: cloud_cd
   type: LoadBalancer

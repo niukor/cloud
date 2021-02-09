@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: tke
-  name: tke-deployment
+    app: cloud_cd
+  name: cloud_cd-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: tke
+      app: cloud_cd
   template:
     metadata:
       labels:
-        app: tke
+        app: cloud_cd
         track: stable
     spec:
       containers:
-        - image: niukor-docker.pkg.coding.net/1_devops_project/spring-boot-repository/tke
-          name: tke
+        - image: niukor-docker.pkg.coding.net/2_devops_cicd/release/cloud_cd
+          name: cloud_cd
           ports:
             - containerPort: 80
       imagePullSecrets:

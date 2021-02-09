@@ -16,7 +16,7 @@ configurations {
 }
 
 bootJar {
-	archiveFileName = 'tke.jar'
+	archiveFileName = 'cloud_cd.jar'
 }
 
 repositories {
