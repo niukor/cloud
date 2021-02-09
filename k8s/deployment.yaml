@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: tke
+  name: tke-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tke
+  template:
+    metadata:
+      labels:
+        app: tke
+        track: stable
+    spec:
+      containers:
+        - image: niukor-docker.pkg.coding.net/1_devops_project/spring-boot-repository/tke
+          name: tke
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: coding-reporstory
